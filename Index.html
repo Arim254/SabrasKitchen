@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sabras Kitchen</title>
+
+  <!-- ✅ SEO Meta Tags -->
+  <meta name="description" content="Sabras Kitchen offers delicious catering and cake ordering services crafted with passion in Kenya.">
+  <meta name="keywords" content="Sabras Kitchen, catering, cake orders, Nairobi catering, Kenya chef, reserve event, order cake">
+  <meta name="author" content="Sabras Kitchen">
+
+  <!-- ✅ Open Graph (Facebook, LinkedIn) -->
+  <meta property="og:title" content="Sabras Kitchen – Delicious Catering & Cake Orders" />
+  <meta property="og:description" content="Reserve an event or order a cake from Sabras Kitchen. Experience delicious moments today!" />
+  <meta property="og:image" content="https://www.yoursite.com/images/preview.jpg" />
+  <meta property="og:url" content="https://www.yoursite.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- ✅ Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sabras Kitchen – Delicious Catering & Cake Orders" />
+  <meta name="twitter:description" content="Reserve an event or order a cake from Sabras Kitchen. Experience delicious moments today!" />
+  <meta name="twitter:image" content="https://www.yoursite.com/images/preview.jpg" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+  <!-- ✅ Fonts & Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+ <style>
+:root {
+  --dark-bg: #101923;
+  --light-bg: #fcfcf7;
+  --ivory: #f5f1e6;
+  --burgundy: #7b011e;
+  --text-dark: #101923;
+  --text-light: #ffffff;
+  --transition: 0.3s ease;
+  --hero-fill: #fcfcf7;
+}
+
+body:not(.light-mode) {
+  --hero-fill: #101923;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--dark-bg);
+  color: var(--text-light);
+  transition: background var(--transition), color var(--transition);
+}
+
+body.light-mode {
+  background: var(--light-bg);
+  color: var(--text-dark);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* -----------------------------
+   HEADER
+----------------------------- */
+header.scrolled-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: transparent;
+  transition: background var(--transition);
+}
+
+header.scrolled-header.scrolled {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 3rem;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--burgundy);
+  margin-right: 2rem; /* ✅ Adds horizontal spacing */
+}
+
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text-light);
+  font-weight: 600;
+  transition: color var(--transition);
+}
+
+body.light-mode .nav-links a {
+  color: var(--text-dark);
+}
+
+.nav-links a:hover {
+  color: var(--burgundy);
+}
+
+#themeToggle {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.nav-toggle {
+  display: none; /* Visible only on small screens */
+}
+
+/* -----------------------------
+   SECTION STYLES
+----------------------------- */
+.section {
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--burgundy);
+}
+
+/* -----------------------------
+   BUTTONS
+----------------------------- */
+.btn {
+  display: inline-block;
+  background: var(--burgundy);
+  color: var(--ivory);
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: background var(--transition), color var(--transition);
+}
+
+.btn:hover {
+  background: var(--ivory);
+  color: var(--burgundy);
+}
+
+/* -----------------------------
+   HERO SECTION
+----------------------------- */
+.hero-modern {
+  position: relative;
+}
+
+.hero-wrapper {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 60vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center right;
+  z-index: 0;
+  transition: background-image 0.2s ease-in-out;
+}
+
+.hero-curve,
+.hero-container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-curve {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 4rem;
+}
+
+.hero-left {
+  flex: 1 1 50%;
+}
+
+.hero-left h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.hero-left p {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.hero-right {
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.logo-container {
+  position: relative;
+  transform: translate(-110px, -20px);
+}
+
+.hero-logo {
+  width: 500px;
+  height: auto;
+  z-index: 2;
+}
+
+.logo-shadow {
+  position: absolute;
+  bottom: -50px;
+  left: 45%;
+  width: 150px;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  filter: blur(6px);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.hero-decor {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.veg-item {
+  position: absolute;
+  width: 140px;
+  pointer-events: none;
+}
+
+.veg1 { right: 10px; bottom: 10px; transform: rotate(-10deg); }
+.veg2 { right: 300px; bottom: -20px; transform: rotate(25deg); }
+.veg3 { right: 50px; bottom: 200px; transform: rotate(-3deg); }
+.veg4 { right: 600px; bottom: 20px; transform: rotate(-3deg); }
+
+/* -----------------------------
+   ABOUT SECTION
+----------------------------- */
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: left;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-img {
+  flex-shrink: 0;
+}
+
+.about-img img {
+  width: 300px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* -----------------------------
+   POPUP
+----------------------------- */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.popup {
+  background: var(--light-bg);
+  color: var(--text-dark);
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.popup .btn {
+  margin: 0.5rem;
+}
+
+/* -----------------------------
+   GALLERY SWIPER
+----------------------------- */
+.gallery-swiper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding-bottom: 2rem;
+}
+
+.gallery-swiper img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.gallery-swiper .swiper-slide {
+  text-align: center;
+}
+
+.gallery-swiper .swiper-button-prev,
+.gallery-swiper .swiper-button-next {
+  display: none;
+}
+
+.gallery-swiper .swiper-pagination-bullet {
+  background: var(--burgundy);
+  opacity: 0.7;
+}
+
+.gallery-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+/* -----------------------------
+   FORMS
+----------------------------- */
+.forms {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.reserve-form {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.reserve-form h3 {
+  margin-bottom: 1rem;
+  color: var(--text-light);
+}
+
+body.light-mode .reserve-form h3 {
+  color: var(--text-dark);
+}
+
+.reserve-form input,
+.reserve-form select,
+.reserve-form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  background: transparent;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: inherit;
+  outline: none;
+  resize: none;
+}
+
+/* -----------------------------
+   SOCIAL & WHATSAPP
+----------------------------- */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-icons a {
+  font-size: 1.5rem;
+  transition: color var(--transition);
+}
+
+.social-icons a:hover {
+  color: var(--burgundy);
+}
+
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  color: #fff;
+  border-radius: 50%;
+  padding: 0.8rem;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+.site-footer {
+  background: var(--dark-bg);
+  color: var(--text-light);
+  padding: 3rem 2rem 1rem;
+  margin-top: 3rem;
+  font-size: 0.95rem;
+}
+
+body.light-mode .site-footer {
+  background: var(--light-bg);
+  color: var(--text-dark);
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-container h3,
+.footer-container h4 {
+  color: var(--burgundy);
+  margin-bottom: 0.8rem;
+}
+
+.footer-container p,
+.footer-container a {
+  color: inherit;
+  line-height: 1.6;
+}
+
+.footer-container a:hover {
+  color: var(--burgundy);
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+}
+
+body.light-mode .footer-bottom {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+
+/* -----------------------------
+   RESPONSIVE (≤ 768px)
+----------------------------- */
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .hero-right {
+    order: -1;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .logo-container {
+    transform: translate(0, 0);
+    display: inline-block;
+  }
+
+  .hero-logo {
+    width: 210px;
+    margin-bottom: 1rem;
+  }
+
+  .logo-shadow {
+    width: 60%;
+    height: 15px;
+    bottom: -6px;
+    left: 90px;
+    filter: blur(6px);
+  }
+
+  .hero-decor {
+    display: none;
+  }
+
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-img img {
+    width: 200px;
+    margin-top: 1rem;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: var(--dark-bg);
+    gap: 1rem;
+    padding: 1rem 0;
+    text-align: center;
+    z-index: 999;
+  }
+
+  .nav-links.nav-active {
+    display: flex;
+  }
+
+  body.light-mode .nav-links {
+    background: var(--light-bg);
+  }
+
+  .forms {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-swiper {
+    padding: 0 1rem;
+  }
+
+  .gallery-swiper .swiper-slide {
+    width: 100%;
+  }
+}
+
+</style>
+
+<body class="light-mode">
+
+<!-- HEADER -->
+<header id="header" class="scrolled-header">
+  <div class="header-container">
+    <a href="#home" class="logo">Sabras Kitchen</a>
+    <div class="nav-wrap">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#reserve">Reserve</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button id="themeToggle" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero-modern">
+  <div class="hero-wrapper">
+    <div class="hero-bg" id="heroBg"></div>
+    <svg class="hero-curve" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1224 681" preserveAspectRatio="none">
+      <path d="M0,0l0,681l1224,0l0,-215c-208.664,-206.531 -251.444,16.852 -395.665,-26.474c-195.252,-58.656 -20.075,-356.09 -275.335,-439.526l-553,0Z" fill="var(--hero-fill)" />
+    </svg>
+
+    <div class="hero-container">
+      <div class="hero-left">
+        <h1><strong>Welcome to Sabras Kitchen</strong></h1>
+        <p>We deliver delicious moments.</p>
+        <div class="hero-buttons">
+          <button class="btn">Contact Us</button>
+          <button class="btn">Reserve</button>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="logo-container">
+          <img src="/sabras 2022.png" alt="Sabras Logo" class="hero-logo" />
+          <div class="logo-shadow"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Decorative Veggies -->
+    <div class="hero-decor">
+      <img src="/veg1.png" alt="Vegetable 1" class="veg-item veg1" />
+      <img src="/veg2.png" alt="Vegetable 2" class="veg-item veg2" />
+      <img src="/veg3.png" alt="Vegetable 3" class="veg-item veg3" />
+      <img src="/veg4.png" alt="Vegetable 4" class="veg-item veg4" />
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section about-section">
+  <div class="about-container">
+    <div class="about-text">
+      <h2 class="section-title">About Us</h2>
+      <p>Delicious meals, crafted with passion.</p>
+      <button class="btn" id="contactChefBtn">Contact the Chef</button>
+    </div>
+    <div class="about-img">
+      <img src="/chef.jpg" alt="Chef" />
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="section">
+  <h2 class="section-title">Gallery</h2>
+  <div class="swiper gallery-swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="https://via.placeholder.com/400x250?text=Dish+1" alt="Dish 1"></div>
+      <div class="swiper-slide"><img src="https://via.placeholder.com/400x250?text=Dish+2" alt="Dish 2"></div>
+      <div class="swiper-slide"><img src="https://via.placeholder.com/400x250?text=Dish+3" alt="Dish 3"></div>
+      <div class="swiper-slide"><img src="https://via.placeholder.com/400x250?text=Dish+4" alt="Dish 4"></div>
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+<!-- RESERVE -->
+<section id="reserve" class="section">
+  <h2 class="section-title">Reserve</h2>
+  <div class="forms">
+
+    <!-- Event Reservation Form -->
+    <form class="reserve-form" action="https://formspree.io/f/mblrdpaz" method="POST">
+      <h3>Reserve An Event</h3>
+      <input type="text" name="fullName" placeholder="Full Name" required />
+      <input type="tel" name="phoneNumber" placeholder="Phone Number" required />
+      <input type="email" name="email" placeholder="Email Address" required />
+      <input type="text" name="eventAddress" placeholder="Event Address" required />
+      <input type="text" name="eventType" placeholder="Nature of Event" />
+      <input type="number" name="guests" placeholder="Number of Guests" />
+      <input type="text" name="budget" placeholder="Budget per Guest" />
+      <textarea name="additionalInfo" placeholder="Additional Information" rows="3"></textarea>
+      <button class="btn" type="submit">Book Event</button>
+    </form>
+
+    <!-- Cake Order Form -->
+    <form class="reserve-form" action="https://formspree.io/f/mjkbgpej" method="POST">
+      <h3>Order A Cake</h3>
+      <input type="text" name="fullName" placeholder="Full Name" required />
+      <input type="tel" name="phoneNumber" placeholder="Phone Number" required />
+      <input type="email" name="email" placeholder="Email Address" required />
+      <input type="text" name="event" placeholder="Event" />
+      <input type="text" name="deliveryLocation" placeholder="Delivery Location" />
+      <select name="flavor" required>
+        <option value="" disabled selected>Select Cake Flavor</option>
+         <option value="Vanilla">Vanilla</option>
+                        <option value="Chocolate">Chocolate</option>
+                        <option value="Red Velvet">Red Velvet</option>
+                        <option value="Lemon">Lemon</option>
+                        <option value="Carrot">Carrot</option>
+                        <option value="Coffee">Coffee</option>
+                        <option value="Matcha Green Tea">Matcha Green Tea</option>
+                        <option value="Blueberry">Blueberry</option>
+                        <option value="Pumpkin">Pumpkin</option>
+                        <option value="Almond">Almond</option>
+                        <option value="Spice">Spice</option>
+                        <option value="Mocha">Mocha</option>
+                        <option value="Salted Caramel">Salted Caramel</option>
+                        <option value="Cookies and Cream">Cookies and Cream</option>
+                        <option value="Cherry">Cherry</option>
+                        <option value="Hazelnut">Hazelnut</option>
+                        <option value="Mint Chocolate Chip">Mint Chocolate Chip</option>
+                        <option value="Pistachio">Pistachio</option>
+                        <option value="Strawberry Shortcake">Strawberry Shortcake</option>
+                        <option value="Coconut Cream">Coconut Cream</option>
+                        <option value="Key Lime">Key Lime</option>
+                        <option value="S'mores">S'mores</option>
+                        <option value="Lavender">Lavender</option>
+      </select>
+      <textarea name="additionalInfo" placeholder="Additional Information" rows="3"></textarea>
+      <button class="btn" type="submit">Order Cake</button>
+    </form>
+
+  </div>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <h2 class="section-title">Contact Us</h2>
+  <p>Email: <a href="mailto:sabraskitchen1@gmail.com">sabraskitchen1@gmail.com</a></p>
+  <p>Phone: <a href="tel:+254722891196">+254 722 891 196</a></p>
+
+  <!-- Email Us button opens Gmail compose window -->
+  <a class="btn" 
+     href="https://mail.google.com/mail/?view=cm&fs=1&to=sabraskitchen1@gmail.com" 
+     target="_blank" rel="noopener noreferrer">
+     Email Us
+  </a>
+
+  <!-- Call Us button initiates a phone call -->
+  <a class="btn" href="tel:+254722891196">
+    Call Us
+  </a>
+
+  <div class="social-icons">
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+  </div>
+</section>
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h3>Sabras Kitchen</h3>
+      <p>Delicious moments, delivered with passion.</p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#reserve">Reserve</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p>Email: <a href="mailto:sabraskitchen1@gmail.com">sabraskitchen1@gmail.com</a></p>
+      <p>Phone: <a href="tel:+254722891196">+254 722 891 196</a></p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; <span id="year"></span> Sabras Kitchen. All rights reserved.</p>
+  </div>
+</footer>
+
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/254722891196" class="whatsapp" aria-label="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- POPUP -->
+<div id="chefPopup" class="popup-overlay">
+  <div class="popup">
+    <h3>Contact the Chef</h3>
+    <p>Would you like to send an email or call?</p>
+    <button class="btn" id="emailChef">Send Email</button>
+    <button class="btn" id="callChef">Call</button>
+    <button class="btn close-btn" id="closePopup">Cancel</button>
+  </div>
+</div>
+
+
+
+  <!-- 1. Load Swiper JS first -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- 2. Then your custom script -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const themeToggle = document.getElementById("themeToggle");
+    const header = document.getElementById("header");
+    const navToggle = document.getElementById("navToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    // Theme toggle (light/dark mode)
+    themeToggle?.addEventListener("click", () => {
+      document.body.classList.toggle("light-mode");
+      themeToggle.innerHTML = document.body.classList.contains("light-mode")
+        ? '<i class="fas fa-sun"></i>'
+        : '<i class="fas fa-moon"></i>';
+    });
+
+    // Hero buttons interactivity
+    const contactChefPopup = () => {
+      document.getElementById("chefPopup").style.display = "flex";
+    };
+    const scrollToReserve = () => {
+      document.getElementById("reserve").scrollIntoView({ behavior: "smooth" });
+    };
+
+    document.querySelector(".hero-left .btn:nth-child(1)")
+      .addEventListener("click", contactChefPopup);
+    document.querySelector(".hero-left .btn:nth-child(2)")
+      .addEventListener("click", scrollToReserve);
+
+    // Sticky header on scroll
+    window.addEventListener("scroll", () => {
+      header?.classList.toggle("scrolled", window.scrollY > 50);
+    });
+
+    // Mobile menu toggle
+    navToggle?.addEventListener("click", () => {
+      navLinks?.classList.toggle("nav-active");
+      navToggle.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks?.classList.remove("nav-active");
+        navToggle?.classList.remove("active");
+      });
+    });
+
+    // Swiper Gallery Carousel
+    new Swiper(".gallery-swiper", {
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+
+    // Chef contact popup
+    document.getElementById("contactChefBtn")?.addEventListener("click", () => {
+      document.getElementById("chefPopup").style.display = "flex";
+    });
+
+    document.getElementById("closePopup")?.addEventListener("click", () => {
+      document.getElementById("chefPopup").style.display = "none";
+    });
+
+    document.getElementById("emailChef")?.addEventListener("click", () => {
+      window.location.href = "mailto:sabraskitchen1@gmail.com";
+    });
+
+    document.getElementById("callChef")?.addEventListener("click", () => {
+      window.location.href = "tel:+254722891196";
+    });
+
+    // Hero background slider
+    const heroBg = document.getElementById("heroBg");
+    const bgImages = [
+      "/bg1.jpg", "/bg2.jpg", "/bg3.jpg",
+      "/bg4.jpg", "/bg5.jpg", "/bg6.jpg", "/bg7.jpg"
+    ];
+    let current = 0;
+
+    setInterval(() => {
+      current = (current + 1) % bgImages.length;
+      if (heroBg) {
+        heroBg.style.backgroundImage = `url('${bgImages[current]}')`;
+      }
+    }, 2500);
+  });
+   document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
